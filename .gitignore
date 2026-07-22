@@ -1,0 +1,9 @@
+# capturas de verificação
+*-desktop.png
+*-mobile.png
+diff*.png
+
+# dependências / temporários
+node_modules/
+.DS_Store
+Thumbs.db

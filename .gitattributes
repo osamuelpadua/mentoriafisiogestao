@@ -1,0 +1,7 @@
+# Preserva os bytes originais dos assets copiados do WordPress.
+# Sem isso o Git converte LF->CRLF no checkout em Windows e os arquivos deixam
+# de ser byte-idênticos ao que o site original serve.
+* -text
+
+*.html text eol=lf
+*.md   text eol=lf
