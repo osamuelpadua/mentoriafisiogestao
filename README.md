@@ -30,8 +30,13 @@ python -m http.server 3333
 
 ## Verificação
 
-Comparação pixel a pixel contra o site original, desktop 1280x800: **0 pixels
-diferentes** (7315px de altura, 9.363.200 pixels comparados).
+Comparação pixel a pixel contra o site original — **0 pixels diferentes** nos dois
+viewports:
+
+| Viewport | Dimensões | Pixels comparados | Diferentes |
+|---|---|---|---|
+| Desktop | 1280 × 7315 | 9.363.200 | **0** |
+| Mobile  | 390 × 11193 | 4.365.270 | **0** |
 
 ## Carregamento externo
 
@@ -55,8 +60,11 @@ Reproduzidos de propósito, para fidelidade:
    lugar nenhum e ausente do backup. Já caía no `Sans-serif` no WordPress.
 2. **Âncora `#mform`** — um botão aponta para `#mform`, elemento que não existe
    na página. O clique não vai a lugar nenhum, igual ao original.
+3. **Duas imagens sem `currentSrc` em viewport mobile** (`selo-garantia-02.png` e
+   `WhatsApp_Image_2025-04-16...`) — o `srcset`/`sizes` gerado pelo WordPress não
+   resolve nenhuma fonte nessa largura. Ocorre igualmente no site ao vivo.
 
-Ambos são corrigíveis, mas corrigir criaria divergência visual proposital.
+Todos são corrigíveis, mas corrigir criaria divergência visual proposital.
 
 ## Origem dos arquivos
 
